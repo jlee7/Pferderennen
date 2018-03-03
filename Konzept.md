@@ -39,6 +39,6 @@ Optionen wie "Erneut spielen" oder "Beenden" sollten möglich sein.
 offene Fragen
 ----------------------
 
-* Wieviele Spieler maximal?
+* Wieviele Spieler?
 2 - 4 Spieler
 
