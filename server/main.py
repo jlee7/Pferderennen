@@ -5,6 +5,9 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
 
+
+
+
 # Index HTML
 @app.route("/")
 def index():
@@ -14,6 +17,11 @@ def index():
 @socketio.on('my event')
 def handle_my_custom_event(json):
     print('received json: ' + str(json))
+    print "Some message received"
+    
+    emit('my response', "Server: This is a simple response.")
+    print "Emitted a message back."
+
 
 
 # Boilerplate starts SocketIO instead of standard flask.
