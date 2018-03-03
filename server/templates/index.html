@@ -11,7 +11,11 @@
 <script type="text/javascript" charset="utf-8">
     var socket = io.connect('http://' + document.domain + ':' + location.port);
     socket.on('connect', function() {
-        socket.emit('my event', {data: 'Client: Connection established! Thank you'});
+        socket.emit('message_from_client', {data: 'Client: Connection established! Thank you'});
+    });
+
+    socket.on('message_to_client', function() {
+        socket.emit('another_message_from_client', {data: 'Client: Some other event triggered.'});
     });
 </script>
 

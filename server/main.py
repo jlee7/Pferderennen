@@ -14,14 +14,16 @@ def index():
     return render_template('index.html')
 
 # Receiving messages
-@socketio.on('my event')
+@socketio.on('message_from_client')
 def handle_my_custom_event(json):
-    print('received json: ' + str(json))
-    print("Some message received")
-    
-    emit('my response', "Server: This is a simple response.")
-    print("Emitted a message back.")
+    #print('received json: ' + str(json))
+    print('Message from client: ' + json["data"])
+    emit('message_to_client', {'data': 'SOME_OTHER_EVENT'})
 
+@socketio.on('another_message_from_client')
+def handle_my_custom_event(json):
+    #print('received json: ' + str(json))
+    print('Another message from client: ' + json["data"])
 
 
 # Boilerplate starts SocketIO instead of standard flask.
