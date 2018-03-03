@@ -24,9 +24,13 @@ Design
 ----------------------
 ### 3.1 Starscreen
 
+Hier folgt eine grobe Skizze
+
 ### 3.2 Starscreen
+Hier folgt eine grobe Skizze
 
 ### 3.3 Starscreen
+Hier folgt eine grobe Skizze
 
 
 offene Fragen
