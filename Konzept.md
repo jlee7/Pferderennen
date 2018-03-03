@@ -17,8 +17,7 @@ Wir erstellen eim Spiel für bis zu **XX** Spieler gleichzeitig. Jeder Spieler s
 Technische Umsetzung
 ----------------------
 Server mit Web-Socket sorgen für Synchronisierung zwischen Spielern.
-Server sendet Daten im JSON Format
-...
+Server sendet Daten im JSON Format...
 
 Design
 ----------------------
