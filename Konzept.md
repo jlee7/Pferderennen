@@ -1,4 +1,4 @@
-Horse Racer
+Horse Racer / Pferderennen
 ======================
 
 Inhaltsverzeichnis
@@ -6,7 +6,7 @@ Inhaltsverzeichnis
 1. Idee
 2. Technische Umsetzung
 3. Design
-
+4. Events für das Spiel
 
 Idee
 ----------------------
@@ -22,7 +22,6 @@ Server sendet Daten im JSON Format...
 Design
 ----------------------
 ### 3.1 Start-Screen
-
 Hier wird ein Logo angezeigt.
 Der Spieler kann in einer Maske direkt seinen Spielernamen eingeben.
 
@@ -33,6 +32,23 @@ Die untere Hälfte ist für Interaktionen (Aufgaben) gedacht.
 ### 3.3 Resultate-Screen
 Hier wird das Resultat des Spiels angezeigt (Rangfolge).
 Optionen wie "Erneut spielen" oder "Beenden" sollten möglich sein.
+
+
+Events für das Spiel
+----------------------
+* Vom Server an Client
+Start
+Ende
+Du hast gewonnen
+Du hast nicht gewonnen
+Frage mit richtiger Antwort
+Anzahl der Schritte für das Pferd
+Highscore
+
+* Vom Client an Server
+Name des Spielers oder IP
+Gewählte Antwort
+Beenötigte Sekunden (Schritte)
 
 
 offene Fragen
