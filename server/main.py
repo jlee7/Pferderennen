@@ -6,14 +6,13 @@ app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
 
 
-
-
 # Index HTML
 @app.route("/")
 def index():
     return render_template('index.html')
 
-# Receiving messages
+# Receiving events
+# Test events ---------------------------
 @socketio.on('message_from_client')
 def handle_my_custom_event(json):
     #print('received json: ' + str(json))
@@ -24,7 +23,29 @@ def handle_my_custom_event(json):
 def handle_my_custom_event(json):
     #print('received json: ' + str(json))
     print('Another message from client: ' + json["data"])
+# ---------------------------------------
 
+# Receivable events from client to server
+@socketio.on('name_of_client')
+def handle_my_custom_event(json):
+    pass
+
+@socketio.on('')
+def handle_my_custom_event(json):
+    pass
+
+@socketio.on('') 
+def handle_my_custom_event(json):
+    pass
+# ----------------------------------------
+
+
+# Emit events to clients
+def emit_event(event_name, json):
+    emit(event_name, json)
+    print("Sending to clients", 
+event_name)
+# ----------------------
 
 # Boilerplate starts SocketIO instead of standard flask.
 if __name__ == '__main__':
