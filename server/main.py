@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO, send, emit
 
-import game_model
+#import game_model
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
