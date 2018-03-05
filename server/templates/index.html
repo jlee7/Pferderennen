@@ -27,6 +27,7 @@
 
         // print msg
         $('#from-server').html(msg);
+        console.log(msg);
 
         socket.emit('another_message_from_client', {data: 'Client: Some other event triggered.'});
     });
