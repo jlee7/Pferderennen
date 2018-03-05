@@ -1,18 +1,18 @@
 from flask import Flask, render_template
-from flask_socketio import SocketIO, send, emit
+from flask_socketio import SocketIO, send, emit, join_room, leave_room
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
 
 
-# Index HTML
+# Return index.html
 @app.route("/")
 def index():
     return render_template('index.html')
 
 # Receiving events
-# Test events ---------------------------
+# Test events --- Connection routine ------------------------
 @socketio.on('message_from_client')
 def handle_my_custom_event(json):
     #print('received json: ' + str(json))
@@ -23,6 +23,8 @@ def handle_my_custom_event(json):
 def handle_my_custom_event(json):
     #print('received json: ' + str(json))
     print('Another message from client: ' + json["data"])
+
+
 # ---------------------------------------
 
 # Receivable events from client to server
