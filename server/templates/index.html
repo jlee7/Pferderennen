@@ -4,17 +4,30 @@
     <title>Pferderennen als Fenstertitel</title>
 </head>
 <body>
-<h1>Pferderennen als Überschrift</h1>
+<h1>Horse Racer</h1>
+<p id="from-server"></p>
 </body>
+
+<!-- Load jquery -->
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
 <script type="text/javascript" charset="utf-8">
     var socket = io.connect('http://' + document.domain + ':' + location.port);
-    socket.on('connect', function() {
+    socket.on('connect', function(data) {
         socket.emit('message_from_client', {data: 'Client: Connection established! Thank you'});
     });
 
-    socket.on('message_to_client', function() {
+    socket.on('message_to_client', function(data) {
+        // convert data
+        var msg = JSON.stringify(data);
+
+        // print msg
+        $('#from-server').html(msg);
+
         socket.emit('another_message_from_client', {data: 'Client: Some other event triggered.'});
     });
 
@@ -22,4 +35,6 @@
 
 
 </script>
+<<<<<<< HEAD
 </html>
+>>>>>>> 3005e3217fff5a72fb4293ff4606eb66a1c09da6

@@ -1,7 +1,9 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO, send, emit
 
-#import game_model
+<<<<<<< HEAD
+# import game_model
+>>>>>>> 3005e3217fff5a72fb4293ff4606eb66a1c09da6
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
@@ -36,7 +38,7 @@ def handle_my_custom_event(json):
 def handle_my_custom_event(json):
     pass
 
-@socketio.on('') 
+@socketio.on('')
 def handle_my_custom_event(json):
     pass
 # ----------------------------------------
@@ -44,7 +46,7 @@ def handle_my_custom_event(json):
 # Emit events to clients
 def emit_event(event_name, json):
     emit(event_name, json)
-    print("Sending to clients", 
+    print("Sending to clients",
 event_name)
 # ----------------------
 
@@ -57,8 +59,8 @@ if __name__ == '__main__':
 
 """
 Notes:
-send() and emit() is used in client 
+send() and emit() is used in client
 context for answering.
-socketio.send() and socketio.emit() is 
+socketio.send() and socketio.emit() is
 used when server starts communication.
 """
