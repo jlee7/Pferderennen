@@ -18,6 +18,10 @@ Technische Umsetzung
 ----------------------
 Server mit Web-Socket sorgen für Synchronisierung zwischen Spielern.
 Server sendet Daten im JSON Format...
+Verschiedene Spieler können sich in 
+Räumen treffen und miteinander spielen. 
+(vgl. Chaträume)
+
 
 Design
 ----------------------

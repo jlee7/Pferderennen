@@ -47,6 +47,16 @@ def emit_event(event_name, json):
 event_name)
 # ----------------------
 
+
 # Boilerplate starts SocketIO instead of standard flask.
 if __name__ == '__main__':
     socketio.run(app)
+
+
+"""
+Notes:
+send() and emit() is used in client 
+context for answering.
+socketio.send() and socketio.emit() is 
+used when server starts communication.
+"""
