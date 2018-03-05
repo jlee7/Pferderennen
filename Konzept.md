@@ -10,16 +10,16 @@ Inhaltsverzeichnis
 
 Idee
 ----------------------
-Grundlegende Spielidee ist das Pferderennen, wie man es von Volksfesten kennt. Dabei treten mehrere Spieler gleichzeitig geneneinader an und versuchen durch gezieltes Werfen von Bällen auf eine Zielscheibe Punkte zu erhalten, die Ihr Pferd vorantreibt. Sieger ist, wer als ersten mit seinem Pferd im Ziel ist. Diese Idee wandeln wir in ein mobiles Spiel um. 
+Grundlegende Spielidee ist das Pferderennen, wie man es von Volksfesten kennt. Dabei treten mehrere Spieler gleichzeitig geneneinader an und versuchen durch gezieltes Werfen von Bällen auf eine Zielscheibe Punkte zu erhalten, die Ihr Pferd vorantreibt. Sieger ist, wer als ersten mit seinem Pferd im Ziel ist. Diese Idee wandeln wir in ein mobiles Spiel um.
 
-Wir erstellen eim Spiel für bis zu **XX** Spieler gleichzeitig. Jeder Spieler spielt mit seinem eigen mobilen Gerät. Durch Lösen von kleinen Aufgaben (**Hier müssen wir festlegen, was wir machen wollen! Rechenaufgaben? Quizfragen? Gesten ausführen?**) können Punkte gesammelt werden, die das Pferd vorantreiben.
+Wir erstellen eim Spiel für bis zu 2-4 Spieler gleichzeitig. Jeder Spieler spielt mit seinem eigen mobilen Gerät. Durch Lösen von kleinen Aufgaben (**Hier müssen wir festlegen, was wir machen wollen! Rechenaufgaben? Quizfragen? Gesten ausführen?**) können Punkte gesammelt werden, die das Pferd vorantreiben.
 
 Technische Umsetzung
 ----------------------
 Server mit Web-Socket sorgen für Synchronisierung zwischen Spielern.
 Server sendet Daten im JSON Format...
-Verschiedene Spieler können sich in 
-Räumen treffen und miteinander spielen. 
+Verschiedene Spieler können sich in
+Räumen treffen und miteinander spielen.
 (vgl. Chaträume)
 
 
@@ -57,7 +57,3 @@ Beenötigte Sekunden (Schritte)
 
 offene Fragen
 ----------------------
-
-* Wieviele Spieler?
-2 - 4 Spieler
-
