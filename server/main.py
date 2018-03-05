@@ -1,6 +1,8 @@
 from flask import Flask, render_template
 from flask_socketio import SocketIO, send, emit
 
+import game_model
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
@@ -39,13 +41,13 @@ def handle_my_custom_event(json):
     pass
 # ----------------------------------------
 
-
 # Emit events to clients
 def emit_event(event_name, json):
     emit(event_name, json)
     print("Sending to clients", 
 event_name)
 # ----------------------
+
 
 
 # Boilerplate starts SocketIO instead of standard flask.
