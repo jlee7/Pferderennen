@@ -9,7 +9,7 @@
 <p id="from-server"></p>
 
 <form id="frm-name">
-  <input type="text" name="Playername" value="" placeholder="Gib deinen Namen an">
+  <input type="text" id="Playername" value="" placeholder="Gib deinen Namen an">
   <button type="submit" name="button">Spiel starten</button>
 </form>
 </body>
@@ -24,7 +24,8 @@
 <script type="text/javascript">
     var socket = io.connect('http://' + document.domain + ':' + location.port);
     socket.on('connect', function(data) {
-        socket.emit('message_from_client', {data: 'Client: Connection established! Thank you'});
+        console.log("Socket connection to server established.")
+        //socket.emit('message_from_client', {data: 'Client: Connection established! Thank you'});
     });
 
     socket.on('message_to_client', function(data) {
@@ -43,9 +44,14 @@
     $('#frm-name').submit(function(e){
       e.preventDefault();
 
-      var frmName = $(this).serialize();
-      console.log('this was sent to the server:"' +frmName+ '"');
-      socket.emit('message_from_client', frmName);
+      //var frmName = $(this).serialize();
+      var myJSON = {};
+      myJSON["context"] = "game_start"
+      myJSON["data"] = document.getElementById("Playername").value;
+
+      console.log('this was sent to the server:', JSON.stringify(myJSON));
+      socket.emit('message_from_client', JSON.stringify(myJSON));
+
     });
 
 </script>
