@@ -41,14 +41,15 @@ def emit_event(event_name, json_data):
        This is not a broadcasting to all clients!"""
     emit(event_name, json_data)
     print("MAIN: Sending to one client as response: ",event_name)
+
 # ----------------------
 
 # Emit events to all clients as broadcast
 def emit_event_to_all_clients(event_name, json_data):
     """Use this function to emit events to all clients as broadcast.
        A JSON is always sent along and it hold all necessary data."""
-    socketio.emit(event_name, json_data)
     print("MAIN: Sending to all clients: ",event_name)
+
 # ---------------------------------------
 
 # Boilerplate starts SocketIO instead of standard flask.
