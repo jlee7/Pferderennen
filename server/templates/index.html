@@ -24,8 +24,9 @@
 <script type="text/javascript">
     var socket = io.connect('http://' + document.domain + ':' + location.port);
     socket.on('connect', function(data) {
+        var data = {"type": "connect", "data": "Client: Connection established! Thank you"}
         console.log("Socket connection to server established.")
-        //socket.emit('message_from_client', {data: 'Client: Connection established! Thank you'});
+        socket.emit('message_from_client', JSON.stringify(data));
     });
 
     socket.on('message_to_client', function(data) {
@@ -36,7 +37,8 @@
         $('#from-server').html(msg);
         console.log(msg);
 
-        socket.emit('another_message_from_client', {data: 'Client: Some other event triggered.'});
+        var data = {"type": "echo", "data": msg}
+        socket.emit("message_from_client", JSON.stringify(data));
     });
 
     <!--"Hier kommen alle Events rein, die vom Server empfangen werden koennen. Einfach wie die Beispiele oben."-->
@@ -46,7 +48,7 @@
 
       //var frmName = $(this).serialize();
       var myJSON = {};
-      myJSON["context"] = "game_start"
+      myJSON["type"] = "game_start"
       myJSON["data"] = document.getElementById("Playername").value;
 
       console.log('this was sent to the server:', JSON.stringify(myJSON));
