@@ -29,12 +29,6 @@
         socket.emit('message_from_client', JSON.stringify(data));
     });
 
-    socket.on('disconnect', function(data) {
-        var data = {"type": "connect", "data": "Disconnecting."}
-        console.log("Socket connection to server established.")
-        socket.emit('message_from_client', JSON.stringify(data));
-    });
-
 
     socket.on('message_to_client', function(data) {
         // convert data
