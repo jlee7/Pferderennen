@@ -24,11 +24,8 @@
 <script type="text/javascript">
     var socket = io.connect('http://' + document.domain + ':' + location.port);
     socket.on('connect', function(data) {
-        var data = {"type": "connect", "data": "Client: Connection established! Thank you"}
         console.log("Socket connection to server established.")
-        socket.emit('message_from_client', JSON.stringify(data));
     });
-
 
     socket.on('message_to_client', function(data) {
         // convert data
@@ -50,7 +47,8 @@
       //var frmName = $(this).serialize();
       var myJSON = {};
       myJSON["type"] = "game_start"
-      myJSON["data"] = document.getElementById("Playername").value;
+      myJSON["data"] = {"name": document.getElementById("Playername").value};
+
 
       console.log('this was sent to the server:', JSON.stringify(myJSON));
       socket.emit('message_from_client', JSON.stringify(myJSON));
