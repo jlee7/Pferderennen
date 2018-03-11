@@ -8,8 +8,8 @@
 <h1>Horse Racer</h1>
 <p id="from-server"></p>
 
-<form id="frm-name">
-  <input type="text" id="Playername" value="" placeholder="Gib deinen Namen an">
+<form id="player">
+  <input type="text" name="name" value="" placeholder="Gib deinen Namen an">
   <button type="submit" name="button">Spiel starten</button>
 </form>
 </body>
@@ -41,13 +41,14 @@
 
     <!--"Hier kommen alle Events rein, die vom Server empfangen werden koennen. Einfach wie die Beispiele oben."-->
 
-    $('#frm-name').submit(function(e){
+    $('#player').submit(function(e){
       e.preventDefault();
 
-      //var frmName = $(this).serialize();
-      var myJSON = {};
-      myJSON["type"] = "game_start"
-      myJSON["data"] = {"name": document.getElementById("Playername").value};
+      var name = $(this).serializeArray(),
+          myJSON = {};
+
+      myJSON.type = "game_start"
+      myJSON.data = {"name": name[0].value};
 
 
       console.log('this was sent to the server:', JSON.stringify(myJSON));
