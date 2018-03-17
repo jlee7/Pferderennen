@@ -50,5 +50,11 @@ class EventManager:
                 self.players[session_id] = Player(session_id, json.loads(json_data)["data"]["name"])
                 self.list_players()
                 print(self.players)
+
+        elif json.loads(json_data)["type"] == "":
+            pass
+
+
+
         #emit_event("message_to_client", json_data)
         #emit_event_to_all_clients("message_to_client", json_data)
