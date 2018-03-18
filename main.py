@@ -1,14 +1,14 @@
 from flask import Flask, render_template, request
 from flask_socketio import SocketIO, send, emit, join_room, leave_room
 
-import model
+import eventmanager
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!' # super secret
 socketio = SocketIO(app)
 
 # Create instances from classes in model.py
-event_manager = model.EventManager()
+event_manager = eventmanager.EventManager()
 
 # Return index.html
 @app.route("/")
@@ -37,7 +37,7 @@ def test_disconnect():
 def handle_my_custom_event(json_data):
     """Use this function to receive events from the client.
        A JSON is always sent along and it hold all necessary data."""
-    print("MAIN: Received a message and forwarding to MessageHandler.")
+    #print("MAIN: Received a message and forwarding to MessageHandler.")
     event_manager.process_message(request.sid, json_data)
 
 
