@@ -39,9 +39,23 @@ Der Spieler kann in einer Maske direkt seinen Spielernamen eingeben.
 * Alle Spieler sehen den Namen der anderen Spieler und den Status
 * Anzahl der freien Plätze ist sichtbar für alle
 
+* GUI-Elemente:
+- Überschrift
+- TextInput für den Spielernamen
+- Label_is_host
+- Laben_status_other_players
+- Button_start
+
+
 ### 3.2 Spiel-Screen
 In der oberen Hälfte wird das Spielfeld samt Gegenspieler angezeigt.
 Die untere Hälfte ist für Interaktionen (Aufgaben) gedacht.
+
+* GUI-Elemente:
+- Spielfeld (freie Hand bei Umsetzung)
+- Quizfeld (Frage mit Antwortbuttons)
+- Label_countdown (optional)
+
 
 Rechenaufgabe
 
@@ -49,23 +63,24 @@ Rechenaufgabe
 Hier wird das Resultat des Spiels angezeigt (Rangfolge).
 Optionen wie "Erneut spielen" oder "Beenden" sollten möglich sein.
 
+* GUI-Elemente:
+- Label_game_results
+- Button_play_again
 
-Events für das Spiel
+
+# Events für das Spiel
 ----------------------
 * Vom Server an Client
-Start
-Ende
-Du hast gewonnen
-Du hast nicht gewonnen
-Frage mit richtiger Antwort
-Anzahl der Schritte für das Pferd
-Highscore
+- is_host
+- set_of_quizzes
+- game_results
+- highscore
 
 * Vom Client an Server
-Name des Spielers oder IP
-Gewählte Antwort
-Beenötigte Sekunden (Schritte)
-
+- connect
+- start_game
+- game_results (after finishing race)
+- play_again
 
 offene Fragen
 ----------------------
@@ -81,3 +96,5 @@ ToDos
 #### Manu:
 * CSS Framework installieren
 * Grobes Screendesign anfertigen
+- Gestaltung des Spielfeldes
+- Bewegungen im Spielfeld
