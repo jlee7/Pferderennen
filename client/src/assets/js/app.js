@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import whatInput from 'what-input';
+import io from 'socket.io-client'
 
 window.$ = $;
 
@@ -28,7 +29,7 @@ socket.on('message_to_client', function(data) {
     socket.emit("message_from_client", JSON.stringify(data));
 });
 
-<!--"Hier kommen alle Events rein, die vom Server empfangen werden koennen. Einfach wie die Beispiele oben."-->
+// Hier kommen alle Events rein, die vom Server empfangen werden koennen. Einfach wie die Beispiele oben.
 
 $('#player').submit(function(e){
   e.preventDefault();
