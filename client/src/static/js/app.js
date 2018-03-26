@@ -18,13 +18,13 @@ socket.on('connect', function(data) {
 });
 
 socket.on('message_to_client', function(data) {
-
+    
     // convert data
     var msg = JSON.parse(data);
 
     // check what's inside the message
-    console.log("Checking the JSON.");
-    console.log(msg.data);
++    console.log("Checking the JSON.");
++    console.log(msg.data);
 
     // print msg
     $('#from-server').html(msg);

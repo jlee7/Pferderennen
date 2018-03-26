@@ -24,16 +24,14 @@ Räumen treffen und miteinander spielen.
 
 * Hochformat
 
-### Anmelden-Screen
-* Wer sich als erster Teinehmer für das Spiel anmeldet is Ho(r)st
-  * Host kann das Spiele start
-* Alle Spieler sehen den Status der anderen Spieler
-
 Design
 ----------------------
 ### 3.1 Start-Screen
 Hier wird ein Logo angezeigt.
+
 Der Spieler kann in einer Maske direkt seinen Spielernamen eingeben.
+
+* Wer sich als erster Teinehmer für das Spiel anmeldet is Ho(r)st
 * "Anmelde-Button" für alle Spieler
 * Host bekomt noch zusätzlich den Button "Spiel starten"
 * Alle Spieler sehen den Namen der anderen Spieler und den Status
