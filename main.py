@@ -119,7 +119,8 @@ def check_players_in_session():
 
 # Boilerplate starts SocketIO instead of standard flask.
 if __name__ == '__main__':
-    socketio.run(app, host="192.168.178.23", port="5001")
+    socketio.run(app)
+    # socketio.run(app, host="192.168.178.23", port="5001")
 
 
 """
