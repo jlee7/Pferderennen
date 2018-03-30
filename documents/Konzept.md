@@ -33,7 +33,7 @@ Der Spieler kann in einer Maske direkt seinen Spielernamen eingeben.
 
 * Wer sich als erster Teinehmer für das Spiel anmeldet is Ho(r)st
 * "Anmelde-Button" für alle Spieler
-* Host bekomt noch zusätzlich den Button "Spiel starten"
+* Horst bekomt noch zusätzlich den Button "Spiel starten"
 * Alle Spieler sehen den Namen der anderen Spieler und den Status
 * Anzahl der freien Plätze ist sichtbar für alle
 
@@ -43,6 +43,10 @@ Der Spieler kann in einer Maske direkt seinen Spielernamen eingeben.
 - Label_is_host
 - Laben_status_other_players
 - Button_start
+
+Info an den Typen, der den Client baut:
+Der Server schickt jedem Client die Info, ob er Horst ist, oder nicht.
+Alle Spieler können auf "START" klicken. Wenn der Horst auf START klickt, beginnt das Spiel und alle normalen Spieler, die bis dahin "START" geklickt haben, bekommen mit dem Horst zusammen das erste Quiz, was gleichzeitig der Trigger für den Spielbeginn ist.
 
 
 ### 3.2 Spiel-Screen
