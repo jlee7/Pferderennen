@@ -11,6 +11,7 @@ class GameSession:
         self.players = dict()
         self.host = None
 
+    # ABOUT THE PLAYERS
     def add_player(self, session_id, is_host, json_data):
         """ Adds a player by its session ID to the players list. """
         print(session_id, is_host)
@@ -36,3 +37,17 @@ class GameSession:
             return True
         else:
             return False
+    # --------------------------------------------------------------------------
+
+    # ABOUT THE GAME
+    def start_game(self):
+        pass
+
+    def end_game(self):
+        pass
+
+    def send_quizzes_to_players(self):
+        pass
+
+
+    # --------------------------------------------------------------------------

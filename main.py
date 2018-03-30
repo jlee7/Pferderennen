@@ -80,9 +80,9 @@ def process_message(session_id, json_data):
 
         #emit_event_to_all_clients("message_to_client", test_json_1)
         #emit_event_to_all_clients("message_to_client", """{"type": "to_all_clients"}""")
-        emit_event("message_to_client", test_json_1)
-        emit_event("message_to_client", test_json_2)
-        emit_event("message_to_client", test_json_3)
+        # emit_event("message_to_client", test_json_1)
+        # emit_event("message_to_client", test_json_2)
+        # emit_event("message_to_client", test_json_3)
 
     elif data["type"] == "disconnect":
         print("PROCESSING: Someone disconnected: ", session_id)
@@ -95,10 +95,10 @@ def process_message(session_id, json_data):
         else:
             if session_id == lobby[0]:
                 is_host = True
-                emit_event("message_to_client", """{'type': 'is_host', 'data': 'You are host'}""")
+                emit_event("message_to_client", """{"type": "is_host", "data": "You are host"}""")
             else:
                 is_host = False
-                emit_event("message_to_client", """{'type': 'is_host', 'data': 'You are not host'}""")
+                emit_event("message_to_client", """{"type": "is_host", "data": "You are not host"}""")
 
             game_session.add_player(session_id, is_host, json_data)
             game_session.list_players()
