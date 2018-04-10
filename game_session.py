@@ -12,15 +12,14 @@ class GameSession:
         self.host = None
 
     # ABOUT THE PLAYERS
-    def add_player(self, session_id, is_host, json_data):
+    def add_player(self, session_id, json_data):
         """ Adds a player by its session ID to the players list. """
-        print(session_id, is_host)
-        self.players[session_id] = player.Player(session_id, is_host, json.loads(json_data)["data"]["name"])
-        if is_host:
-            if len(self.players) > 1:
-                self.start_game()
-        else:
-            pass
+        self.players[session_id] = player.Player(session_id, json.loads(json_data)["data"]["name"])
+        # if is_host:
+        #     if len(self.players) > 1:
+        #         self.start_game()
+        # else:
+        #     pass
 
     def remove_player(self, session_id):
         """ Removes a player from the list. Since the list holds players

@@ -91,7 +91,7 @@ def process_message(session_id, json_data):
         if game_session.check_if_player_exists(session_id):
             print("PROCESSING: Player already exists.")
         else:
-            game_session.add_player(session_id, is_host, json_data)
+            game_session.add_player(session_id, json_data)
             game_session.list_players()
             print("PROCESSING: Player has been added to session:", session_id)
 
