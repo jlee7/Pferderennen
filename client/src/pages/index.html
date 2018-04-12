@@ -1,13 +1,62 @@
-<div class="grid-container">
-  <div class="grid-x grid-margin-x">
-    <div class="large-12 cell">
-      <h1>Horse Racer</h1>
+<div class="grid-y grid-padding-y grid-padding-x grid-frame">
+    <header class="cell small-2">
+        <h1 data-stage="lobby">Horse Racer</h1>
+    </header>
+    <div class="cell auto body" data-stage="lobby">
+        <form id="player">
+            <input type="text" name="name" value="" placeholder="Gib deinen Namen an">
+            <button class="button" type="submit" name="button">Spiel beitreten</button>
+        </form>
+
+        <div class="player-status">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Josef</td>
+                        <td>status: Pending</td>
+                        <td>host</td>
+                    </tr>
+                    <tr>
+                        <td>Manuel</td>
+                        <td>status: Pending</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Casjen</td>
+                        <td>status: Pending</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>Robert</td>
+                        <td>status: Pending</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-    <div class="large-12 cell">
-      <form id="player">
-        <input type="text" name="name" value="" placeholder="Gib deinen Namen an">
-        <button class="button" type="submit" name="button">Spiel beitreten</button>
-      </form>
-    </div>
-  </div>
+    <footer class="cell small-2">
+        <div class="chat" data-stage="lobby">
+            <div class="chat-window">
+                <div class="chat-row">
+                    <div>
+                        <span class="chat-name">Josef</span> schrieb um <span class="chat-time"> 13:43</span>
+                    </div>
+                    <div class="chat-msg">
+                        Hallo Freunde des Pferderennens
+                    </div>
+                </div>
+            </div>
+            <div class="chat-form">
+                <form id="chat">
+                    <div class="input-group">
+                        <input type="text" class="input-group-field" name="send Message" value="" placeholder="Gib deine Nachricht ein">
+                        <div class="input-group-button">
+                            <button class="button" type="submit" name="button">Nachricht senden</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </footer>
 </div>
